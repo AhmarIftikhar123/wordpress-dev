@@ -8,15 +8,11 @@
 define("AQUILA_DIR_PATH", untrailingslashit(get_template_directory()));
 define("AQUILA_DIR_URI", untrailingslashit(get_template_directory_uri()));
 
-require_once AQUILA_DIR_PATH . "/inc/helpers/autoloader.php";
+require_once AQUILA_DIR_PATH . '/vendor/autoload.php';
 
-function aquila_get_theme_instance()
-{
-          \AQUILA_THEME\Inc\AquilaTheme::get_instance();
-}
+use Inc\classes\AquilaTheme;  // Correct reference to AquilaTheme class
 
-aquila_get_theme_instance();
-
+$instance = AquilaTheme::get_instance();
 function aquila_enqueue_styles()
 {
           // Register Bootstrap CSS

@@ -1,22 +1,16 @@
 <?php
 /**
- * bootstraps The Theme.
+ * Theme Functions
  * 
  * @package Aquila
  */
-namespace AQUILA_THEME\Inc;
 
-use AQUILA_THEME\Inc\Traits\Singleton;
+namespace Inc\classes;
+
+use Inc\traits\TraitSingleton;// Correct namespace for the class
+
+
 class AquilaTheme
 {
-          use Singleton;
-          protected function __construct()
-          {
-                    // load class.
-                    $this->set_hooks();
-          }
-          protected function set_hooks()
-          {
-                    // action & filters.
-          }
+          use TraitSingleton;
 }
