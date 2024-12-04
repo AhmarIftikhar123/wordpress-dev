@@ -5,7 +5,7 @@
  * @package Aquila
  */
 
-namespace Inc\traits;  // Corrected namespace
+namespace Traits;  // Corrected namespace
 
 trait TraitSingleton
 {
