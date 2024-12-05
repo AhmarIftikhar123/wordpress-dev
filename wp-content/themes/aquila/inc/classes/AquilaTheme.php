@@ -38,7 +38,7 @@ class AquilaTheme
                               array(
                                         'header-text' => array('site-title', 'site-description'),
                                         'height' => 100,
-                                        'width' => 400,
+                                        'width' => 100,
                                         'flex-height' => true,
                                         'flex-width' => true,
                                         'unlink-homepage-logo' => true, // Option to unlink logo from the homepage.
@@ -48,6 +48,20 @@ class AquilaTheme
                               'default-color' => 'white',
                               'default-image' => ''
                     ));
+                    // Add support for post thumbnails
+                    add_theme_support('post-thumbnails');
+                    // Add support for automatic feed links
+                    add_theme_support('automatic-feed-links');
+                    // Add support for Custom style sheet
+                    add_editor_style();
+                    // Add support for block styles
+                    add_theme_support('wp-block-styles');
+                    // Add support for align wide
+                    add_theme_support('align-wide');
+                    // Setting Site Width
+                    global $content_width;
+                    if (!isset($content_width)) {
+                              $content_width = 1240; // Set the content width to 800 pixels
+                    }
           }
-
 }
