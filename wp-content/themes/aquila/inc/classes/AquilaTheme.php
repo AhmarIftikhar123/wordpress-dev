@@ -10,6 +10,7 @@
 namespace Inc\classes;
 
 use Classes\assets;
+use Classes\menus;
 use Traits\TraitSingleton;
 
 class AquilaTheme
@@ -18,6 +19,7 @@ class AquilaTheme
           public function __construct()
           {
                     assets::get_instance();
+                    menus::get_instance();
                     $this->setup_hooks();
           }
           public function setup_hooks()

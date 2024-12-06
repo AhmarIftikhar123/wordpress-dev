@@ -5,7 +5,8 @@
  * @package Aquila
  */
 ?>
-<footer>Footer</footer>
+<footer><?php wp_nav_menu(array('theme_location' => 'aquila-footer-menu', 'container_class' => 'footer-menu')); ?>
+</footer>
 
 </div>
 </div>
