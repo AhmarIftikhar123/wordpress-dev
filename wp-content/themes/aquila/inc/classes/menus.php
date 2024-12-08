@@ -21,10 +21,10 @@ class menus
           }
           public function register_menus()
           {
-                    register_nav_menus(array(
+                    register_nav_menus([
                               'aquila-header-menu' => esc_html__('Header Menu', 'Aquila'),
                               'aquila-footer-menu' => esc_html__('Footer Menu', 'Aquila'),
-                    ));
+                    ]);
           }
           public function get_menu_id(string $location)
           {

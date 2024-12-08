@@ -10,7 +10,6 @@ use Classes\menus;
 $manu_instance = menus::get_instance();
 $get_manu_id = $manu_instance->get_menu_id('aquila-footer-menu');
 $header_menus = wp_get_nav_menu_items($get_manu_id);
-print_r(value: $header_menus);
 ?>
 <footer>
           <nav class="navbar navbar-expand-lg bg-body-tertiary">
