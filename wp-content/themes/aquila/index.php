@@ -7,7 +7,7 @@
 get_header();
 ?>
 <div class="content">
-          <h1>It's a Content with Test</h1>
+          <h1>It's a Content with #26</h1>
 </div>
 
 <?php get_footer();
