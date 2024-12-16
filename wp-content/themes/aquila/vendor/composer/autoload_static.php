@@ -15,6 +15,10 @@ class ComposerStaticInit485bfedf2d23e4e908c558b4107cab6f
         array (
             'Inc\\' => 4,
         ),
+        'H' => 
+        array (
+            'Helpers\\' => 8,
+        ),
         'C' => 
         array (
             'Classes\\' => 8,
@@ -29,6 +33,10 @@ class ComposerStaticInit485bfedf2d23e4e908c558b4107cab6f
         'Inc\\' => 
         array (
             0 => __DIR__ . '/../..' . '/inc',
+        ),
+        'Helpers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/inc/helpers',
         ),
         'Classes\\' => 
         array (

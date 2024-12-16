@@ -5,7 +5,8 @@
     "psr-4": {
       "Inc\\": "inc/",
       "Classes\\": "inc/classes/",
-      "Traits\\": "inc/traits/"
+      "Traits\\": "inc/traits/",
+      "Helpers\\": "inc/helpers/"
     }
   }
 }
