@@ -11,6 +11,7 @@ namespace Inc\classes;
 
 use Classes\assets;
 use Classes\menus;
+use Classes\MetaBoxes;
 use Traits\TraitSingleton;
 
 class AquilaTheme
@@ -20,6 +21,7 @@ class AquilaTheme
           {
                     assets::get_instance();
                     menus::get_instance();
+                    MetaBoxes::get_instance();
                     $this->setup_hooks();
           }
           public function setup_hooks()
@@ -52,6 +54,10 @@ class AquilaTheme
                     ));
                     // Add support for post thumbnails
                     add_theme_support('post-thumbnails');
+
+                    // Registers a new image size.
+                    add_image_size('featured-thumbnail', 350, 230, true);
+
                     // Add support for automatic feed links
                     add_theme_support('automatic-feed-links');
                     // Add support for Custom style sheet

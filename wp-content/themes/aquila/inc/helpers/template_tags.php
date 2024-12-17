@@ -2,7 +2,7 @@
 namespace Helpers;
 class Template_tags
 {
-          public function get_the_post_custom_thumbnail($post_id, $size = 'featured-large', $attr = array())
+          public function get_the_post_custom_thumbnail($post_id, $size = 'featured-thumbnail', $attr = array())
           {
                     if (empty($post_id)) {
                               $post_id = get_the_ID();
