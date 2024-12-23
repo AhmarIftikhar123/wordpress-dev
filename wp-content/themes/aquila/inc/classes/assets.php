@@ -20,12 +20,16 @@ class assets
           {
                     // Register Bootstrap CSS
                     wp_register_style('bootstrap', AQUILA_DIR_URI . '/assets/src/library/css/bootstrap.min.css', array(), null, 'all');
+                    // Register WordPress Default CSS
+                    wp_register_style('style', get_stylesheet_uri(), array(), filemtime(get_stylesheet_directory() . '/style.css'), 'all');
                     // Register Custom CSS
                     wp_register_style('custom', AQUILA_DIR_URI . '/assets/src/css/custom.css', array(), filemtime(AQUILA_DIR_PATH . '/assets/src/css/custom.css'), 'all');
                     // Enqueue Styles
                     wp_enqueue_style('bootstrap');
+                    wp_enqueue_style('style');
                     wp_enqueue_style('custom');
           }
+
           public function register_scripts()
           {
                     // Register Popper.js
