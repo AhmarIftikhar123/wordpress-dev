@@ -12,4 +12,5 @@ $template_tags_instance = new Template_tags()
 
 <div class="entery-meta mb-3">
           <?= $template_tags_instance->aquila_posted_on(); ?>
+          <?= $template_tags_instance->aquila_posted_by(); ?>
 </div>
