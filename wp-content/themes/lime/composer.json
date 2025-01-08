@@ -1,0 +1,14 @@
+{
+  "name": "root/lime",
+  "autoload": {
+    "psr-4": {
+      "Inc\\": "inc/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ahmar Ifthikhar"
+    }
+  ],
+  "require": {}
+}
