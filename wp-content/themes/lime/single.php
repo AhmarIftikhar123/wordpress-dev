@@ -4,6 +4,10 @@
  *
  * @package YOYO-Tube
  */
+use Inc\Helpers\Template_tags;
+
+$template_tags = new Template_tags();
+
 ?>
 
 <?php get_header(); ?>
@@ -21,6 +25,7 @@
                               <p><?php get_template_part("template-parts/content-none") ?></p>
                     </div>
           <?php endif; ?>
+          <?= $template_tags->yoyo_pagination() ?>
 </main>
 
 <?php get_footer(); ?>

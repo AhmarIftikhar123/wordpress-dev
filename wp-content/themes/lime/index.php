@@ -4,6 +4,9 @@
  *
  * @package Aquila
  */
+use Inc\Helpers\Template_tags;
+
+$template_tags = new Template_tags();
 ?>
 
 <?php get_header(); ?>
@@ -27,6 +30,7 @@
                               </div>
                     <?php endif; ?>
           </div>
+          <?= $template_tags->yoyo_pagination() ?>
 </main>
 
 <?php get_footer(); ?>

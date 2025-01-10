@@ -25,7 +25,7 @@ $isheading_hidden = empty($get_current_heading) || $get_current_heading === 'yes
                                                   <?= $template_tags->get_the_post_custom_thumbnail($current_post_id) ?>
 
                                                   <?php $page_title = wp_kses_post(get_the_title()); ?>
-                                                  <?php if (is_home() || is_page()) {
+                                                  <?php if (is_single() || is_page()) {
                                                             $heading = sprintf(
                                                                       '<h1 class="page-title text-dark"
                                                                       %1$s

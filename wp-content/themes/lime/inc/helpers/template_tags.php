@@ -79,4 +79,44 @@ class Template_tags
                     ;
                     return "";
           }
+          public function yoyo_pagination()
+          {
+                    $args = [
+                              "before_page_number" => '<span class="btn btn-primary rounded">',
+                              "after_page_number" => "</span>",
+                    ];
+
+                    $allowed_html = [
+                              "span" => [
+                                        "class" => [],
+                              ],
+                              "a" => [
+                                        "class" => [],
+                                        "href" => [],
+                              ],
+                              "li" => [
+                                        "class" => [],
+                              ],
+                              "ul" => [
+                                        "class" => [],
+                              ],
+                    ];
+
+                    // Generate pagination links
+                    $pagination_links = paginate_links($args);
+
+                    // Check if pagination links are empty
+                    if (empty($pagination_links)) {
+                              return ''; // Return an empty string if there are no pagination links
+                    }
+
+                    // Build the complete pagination HTML
+                    $pagination = sprintf(
+                              '<nav aria-label="Video pagination" class="pagination pagination-dark align-items-center justify-content-center">%s</nav>',
+                              wp_kses($pagination_links, $allowed_html)
+                    );
+
+                    return $pagination;
+          }
+
 }

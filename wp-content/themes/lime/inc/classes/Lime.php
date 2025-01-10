@@ -14,6 +14,7 @@ class Lime
                     Assets::getInstance();
                     Manus::getInstance();
                     MetaBoxes::getInstance();
+                    Sidebars::getInstance();
           }
 
           private function setup_hooks()
