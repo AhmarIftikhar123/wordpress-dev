@@ -21,6 +21,7 @@ class Sidebars
           private function setup_hooks()
           {
                     add_action('widgets_init', [$this, 'register_sidebars']);
+                    add_action('widgets_init', [$this, 'clockWidget']);
           }
           public function register_sidebars()
           {
@@ -43,5 +44,9 @@ class Sidebars
                               'before_title' => '<h4 class="widget-title">',
                               'after_title' => '</h4>'
                     ]);
+          }
+          public function clockWidget()
+          {
+                    register_widget('Inc\classes\clockWidget');
           }
 }

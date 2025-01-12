@@ -36,6 +36,11 @@ class Assets
                     wp_register_script('nav_js', TEMPLATE_URI . "/assets/src/js/nav/nav.js", [], filemtime(TEMPLATE_URI . "/assets/src/js/nav/nav.js"), true);
 
                     wp_enqueue_script('nav_js');
+
+                    // Register Main JS
+                    wp_register_script('main_js', TEMPLATE_URI . "/assets/src/js/main.js", ["jquery"], filemtime(TEMPLATE_URI . "/assets/src/js/main.js"), true);
+
+                    wp_enqueue_script('main_js');
           }
           public function register_styles()
           {
