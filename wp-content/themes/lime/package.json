@@ -1,0 +1,39 @@
+{
+  "name": "yoyo-tube",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production npx webpack",
+    "start": "NODE_ENV=development npx webpack --watch"
+  },
+  "keywords": [
+    "wordpress",
+    "themes"
+  ],
+  "author": "Ahmar Ifthikhar",
+  "license": "ISC",
+  "description": "YOYO-Tube Theme packages",
+  "private": true,
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "cssnano": "^7.0.6",
+    "file-loader": "^6.2.0",
+    "style-loader": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "mini-css-extract-plugin": "^2.9.2",
+    "terser-webpack-plugin": "^5.3.11",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
