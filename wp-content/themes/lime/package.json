@@ -4,8 +4,9 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production npx webpack",
-    "start": "NODE_ENV=development npx webpack --watch"
+    "build": "npm run clean && cross-env NODE_ENV=production npx webpack",
+    "start": "cross-env NODE_ENV=development npx webpack --watch",
+    "clean": "rimraf dist"
   },
   "keywords": [
     "wordpress",

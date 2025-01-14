@@ -42,13 +42,22 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "mini_css/[name].css", // Output CSS file
     }),
-    new CleanWebpackPlugin(process.env.NODE_ENV === "production"), // Add the CleanWebpackPlugin to the plugins array
+    new CleanWebpackPlugin(), // Add the CleanWebpackPlugin to the plugins array
   ],
   optimization: {
     minimize: true, // Enable optimization
     minimizer: [
-      new TerserPlugin(), // Minify JavaScript
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true,
+          },
+        },
+      }), // Minify JavaScript
       new CssMinimizerPlugin(), // Minify CSS (optional, recommended)
     ],
+  },
+  externals: {
+    jquery: "JQuery",
   },
 };
