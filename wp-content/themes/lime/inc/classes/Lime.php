@@ -56,8 +56,9 @@ class Lime
                     // WP html5 support
                     add_theme_support('html5', ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script']);
 
-                    // WP add editor-style.css for Custom Styles
-                    add_editor_style();
+                    // WP add editor-style.css for Gutenburg Block editor Custom Styles
+                    add_editor_style("asstes/dist/mini_css/editor.css");
+
                     // WP Block Styles
                     add_theme_support('wp-block-styles');
                     // WP Alignment of blocks

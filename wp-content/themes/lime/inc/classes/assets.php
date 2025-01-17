@@ -52,10 +52,17 @@ class Assets
 
                     // Register Bootstrap style
                     wp_register_style('bootstrap_css', TEMPLATE_URI . "/assets/src/library/css/bootstrap.min.css", [], filemtime(TEMPLATE_DIR . '/assets/src/library/css/bootstrap.min.css'), 'all');
+
                     wp_enqueue_style('bootstrap_css');
+                    // Register Fonts.css for fonts
 
                     // Register Nabar Style
                     wp_register_style('Navbar_css', TEMPLATE_URI . "/assets/src/css/Navbar.min.css", [], filemtime(TEMPLATE_DIR . '/assets/css/Navbar.min.css'), 'all');
                     wp_enqueue_style('Navbar_css');
+
+                    // Register main.css Style
+                    wp_register_style('main_css', TEMPLATE_URI . "/assets/src/src/dist/mini_css/main.css", [], filemtime(TEMPLATE_DIR . '/assets/src/dist/mini_css/main.css'), 'all');
+
+                    wp_enqueue_style('main_css');
           }
 }

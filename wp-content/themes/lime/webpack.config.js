@@ -3,12 +3,16 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin"); // Optional for CSS minification
 const { CleanWebpackPlugin } = require("clean-webpack-plugin"); // Import the plugin
-
+const JS_DIR = "./assets/src/js/";
+const entry = {
+  main: JS_DIR + "main.js",
+  editor: JS_DIR + "editor.js",
+};
 module.exports = {
-  entry: "./assets/src/js/main.js", // Entry point of your application
+  entry: entry, // Entry point of your application
   output: {
     path: path.resolve(__dirname, "dist"), // Output directory
-    filename: "bundle.js", // Output JavaScript file
+    filename: "[name]bundle.js", // Output JavaScript file
   },
   mode: "production", // Set mode to 'production' for optimized builds
   module: {
@@ -21,8 +25,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/, // Apply this rule to CSS files
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        test: /\.scss$/, // Apply this rule to CSS files
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|jpg|svg|gif|ico)$/, // Match image files
