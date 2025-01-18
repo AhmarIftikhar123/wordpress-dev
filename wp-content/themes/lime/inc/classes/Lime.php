@@ -15,6 +15,7 @@ class Lime
                     Manus::getInstance();
                     MetaBoxes::getInstance();
                     Sidebars::getInstance();
+                    blockPattrens::getInstance();
           }
 
           private function setup_hooks()
@@ -59,8 +60,12 @@ class Lime
                     // WP add editor-style.css for Gutenburg Block editor Custom Styles
                     add_editor_style("asstes/dist/mini_css/editor.css");
 
-                    // WP Block Styles
-                    add_theme_support('wp-block-styles');
+                    // add DefaultWP Block Styles
+                    // add_theme_support('wp-block-styles');
+
+                    // Remove Core block Pattrens
+                    remove_theme_support('core-block-patterns');
+
                     // WP Alignment of blocks
                     add_theme_support('align-wide');
                     add_theme_support('align-full');

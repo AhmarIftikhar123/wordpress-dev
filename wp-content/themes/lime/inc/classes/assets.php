@@ -16,6 +16,7 @@ class Assets
           {
                     add_action('wp_enqueue_scripts', [$this, 'register_styles']);
                     add_action('wp_enqueue_scripts', [$this, 'register_scripts']);
+                    add_action('wp_enqueue_scripts', [$this, 'remove_scripts']);
           }
           public function register_scripts()
           {
@@ -64,5 +65,12 @@ class Assets
                     wp_register_style('main_css', TEMPLATE_URI . "/assets/src/src/dist/mini_css/main.css", [], filemtime(TEMPLATE_DIR . '/assets/src/dist/mini_css/main.css'), 'all');
 
                     wp_enqueue_style('main_css');
+          }
+          public function remove_scripts()
+          {
+                    wp_dequeue_script('wp-block-library');
+                    wp_dequeue_script('wp-block-library-theme');
+                    wp_dequeue_script('wp-block-library-css');
+                    wp_dequeue_script('wp-block-style'); // Remove the WooCommerce block styles
           }
 }
