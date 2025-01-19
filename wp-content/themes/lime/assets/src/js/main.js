@@ -3,3 +3,4 @@ import "./clock";
 import "../sass/main.scss";
 // Images
 import "../images/clock.png";
+import "../images/cover.jpg";

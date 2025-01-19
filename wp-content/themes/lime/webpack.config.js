@@ -33,7 +33,7 @@ module.exports = {
         use: {
           loader: "file-loader", // Use file-loader to process
           options: {
-            name: "[name].[hash].[ext]", // Specify the output file name pattern
+            name: "[name].[ext]", // Specify the output file name pattern
             outputPath: "images/", // Define the output directory for images
             publicPath:
               process.env.NODE_ENV === "production" ? "../" : "../../", // Set the public path dynamically based on environment

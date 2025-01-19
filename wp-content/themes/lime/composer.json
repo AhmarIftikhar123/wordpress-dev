@@ -2,7 +2,8 @@
   "name": "root/lime",
   "autoload": {
     "psr-4": {
-      "Inc\\": "inc/"
+      "Inc\\": "inc/",
+      "TemplateParts\\": "template-parts/"
     }
   },
   "authors": [

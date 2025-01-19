@@ -1,57 +1,71 @@
 <?php
+/**
+ * Class for Block Pattrens
+ * @package YOYO-Tube
+ */
 namespace Inc\classes;
 
 use Inc\Traits\Singleton;
 
 class blockPattrens
 {
-          use Singleton;
+    use Singleton;
 
-          public function __construct()
-          {
-                    $this->setup_hooks();
-          }
+    public function __construct()
+    {
+        $this->setup_hooks();
+    }
 
-          public function setup_hooks()
-          {
-                    add_action('init', [$this, 'wp_register_block_pattrens']);
-          }
-          public function wp_register_block_pattrens()
-          {
-                    if (function_exists('register_block_pattern')) {
-                              register_block_pattern(
-                                        "YOYO_Tube/cursor_tracker",
-                                        [
-                                                  "title" => __("Cursor Tracker", "YOYO-Tube"),
-                                                  "description" => __("Custom YOYO-Tube Cursor Tracker", "YOYO-Tube"),
-                                                  "content" => '
-                                    <!-- wp:cover {"url":"http://localhost:8001/wp-content/uploads/2025/01/Limedesign-1.png","id":117,"dimRatio":80,"customOverlayColor":"#465142","isUserOverlayColor":false,"layout":{"type":"constrained"}} -->
-                                    <div class="wp-block-cover">
-                                        <span aria-hidden="true" class="wp-block-cover__background has-background-dim-80 has-background-dim" style="background-color:#465142"></span>
-                                        <img class="wp-block-cover__image-background wp-image-117" alt="" src="http://localhost:8001/wp-content/uploads/2025/01/Limedesign-1.png" data-object-fit="cover"/>
-                                        <div class="wp-block-cover__inner-container">
-                                            <!-- wp:paragraph {"align":"center","placeholder":"Write title…","style":{"elements":{"link":{"color":{"text":"var:preset|color|black"}}}},"textColor":"black","fontSize":"x-large"} -->
-                                            <p class="has-text-align-center has-black-color has-text-color has-link-color has-x-large-font-size">The Heading of the Post.</p>
-                                            <!-- /wp:paragraph -->
-                                            <!-- wp:paragraph {"align":"center"} -->
-                                            <p class="has-text-align-center">The is the content of the Post.</p>
-                                            <!-- /wp:paragraph -->
-                                            <!-- wp:buttons {"align":"full","layout":{"type":"flex","justifyContent":"center"}} -->
-                                            <div class="wp-block-buttons alignfull">
-                                                <!-- wp:button {"textAlign":"center"} -->
-                                                <div class="wp-block-button">
-                                                    <a class="wp-block-button__link has-text-align-center wp-element-button">Read More</a>
-                                                </div>
-                                                <!-- /wp:button -->
-                                            </div>
-                                            <!-- /wp:buttons -->
-                                        </div>
-                                    </div>
-                                    <!-- /wp:cover -->
-                                '
-                                        ]
-                              );
-                    }
-          }
+    public function setup_hooks()
+    {
+        add_action('init', [$this, 'wp_register_block_pattrens']);
+        add_action('init', [$this, 'wp_register_block_pattren_catogeries']);
+    }
+
+    public function wp_register_block_pattrens()
+    {
+        if (function_exists('register_block_pattern')) {
+
+            $block_content = $this->get_pattren_content('heading', 'heading_block_HTML');
+            $grid_block_content = $this->get_pattren_content('grid_content', 'grid_content_HTML');
+            register_block_pattern(
+                "YOYO_Tube/heading_block",
+                [
+                    "title" => __("Heading_Block", "YOYO-Tube"),
+                    "description" => __("Custom YOYO-Tube Heading Block", "YOYO-Tube"),
+                    "categories" => ["Heading", 'Intro'], // Matches the registered category key
+                    "content" => $block_content,
+                ]
+            );
+            register_block_pattern(
+                "YOYO_Tube/Grid_Content",
+                [
+                    "title" => __("Grid_Content", "YOYO-Tube"),
+                    "description" => __("Custom YOYO-Tube Grid Contetn", "YOYO-Tube"),
+                    "categories" => ["Grid_Content"], // Matches the registered category key
+                    "content" => $grid_block_content,
+                ]
+            );
+        }
+    }
+
+    public function wp_register_block_pattren_catogeries()
+    {
+        $catogeries_arr = [
+            "Heading" => __("Heading_block", "YOYO-Tube"), // The key matches the block pattern category
+            "Intro" => __("Intro_block", "YOYO-Tube"), // The key matches the block pattern category
+            "Grid_Content" => __("Grid_Content", "YOYO-Tube"), // The key matches the block pattern category
+        ];
+        if (is_array($catogeries_arr) && function_exists('register_block_pattern_category')) {
+            foreach ($catogeries_arr as $catogery_name => $catogery_title) {
+                register_block_pattern_category($catogery_name, ['label' => $catogery_title]);
+            }
+        }
+    }
+    public function get_pattren_content(string $template_path, $template_name = '')
+    {
+        ob_start();
+        get_template_part('template-parts/pattrens/' . $template_path, $template_name);
+        return ob_get_clean();
+    }
 }
-
