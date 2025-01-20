@@ -3,16 +3,19 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin"); // Optional for CSS minification
 const { CleanWebpackPlugin } = require("clean-webpack-plugin"); // Import the plugin
+const DependencyExtractionWebpackPlugin = require("@wordpress/dependency-extraction-webpack-plugin");
+
 const JS_DIR = "./assets/src/js/";
 const entry = {
   main: JS_DIR + "main.js",
   editor: JS_DIR + "editor.js",
+  block: JS_DIR + "block.js",
 };
 module.exports = {
   entry: entry, // Entry point of your application
   output: {
     path: path.resolve(__dirname, "dist"), // Output directory
-    filename: "[name]bundle.js", // Output JavaScript file
+    filename: "[name].js", // Output JavaScript file
   },
   mode: "production", // Set mode to 'production' for optimized builds
   module: {
@@ -47,6 +50,10 @@ module.exports = {
       filename: "mini_css/[name].css", // Output CSS file
     }),
     new CleanWebpackPlugin(), // Add the CleanWebpackPlugin to the plugins array
+    new DependencyExtractionWebpackPlugin({
+      injectPolyfill: true,
+      combineAssets: true,
+    }),
   ],
   optimization: {
     minimize: true, // Enable optimization
