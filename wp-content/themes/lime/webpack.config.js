@@ -11,6 +11,7 @@ const entry = {
   editor: JS_DIR + "editor.js",
   block: JS_DIR + "block.js",
 };
+
 module.exports = {
   entry: entry, // Entry point of your application
   output: {
@@ -21,14 +22,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/, // Apply this rule to JavaScript files
+        test: /\.(js|jsx)$/, // Apply this rule to JavaScript and JSX files
         exclude: /node_modules/,
         use: {
           loader: "babel-loader", // Transpile JavaScript with Babel
+          options: {
+            presets: [
+              "@babel/preset-env", // Transpile ES6+ to ES5
+              "@babel/preset-react", // Transpile JSX to JavaScript
+            ],
+          },
         },
       },
       {
-        test: /\.scss$/, // Apply this rule to CSS files
+        test: /\.scss$/, // Apply this rule to SCSS files
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
@@ -69,6 +76,9 @@ module.exports = {
     ],
   },
   externals: {
-    jquery: "JQuery",
+    jquery: "jQuery", // Externalize jQuery to avoid bundling it
+  },
+  resolve: {
+    extensions: [".js", ".jsx"], // Resolve .js and .jsx files without explicitly specifying extensions
   },
 };

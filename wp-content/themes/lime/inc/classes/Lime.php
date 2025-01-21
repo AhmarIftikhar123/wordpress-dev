@@ -15,6 +15,7 @@ class Lime
                     Manus::getInstance();
                     MetaBoxes::getInstance();
                     Sidebars::getInstance();
+                    blocks::getInstance();
                     blockPattrens::getInstance();
           }
 

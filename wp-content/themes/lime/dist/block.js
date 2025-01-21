@@ -1,1 +1,1 @@
-document.body.style.backgroundColor = `red`;
+!function(){"use strict";var e=window.wp.blocks,t=window.wp.i18n;(0,e.registerBlockType)("yoyo-blocks/heading-with-icon",{title:(0,t.__)("Heading with Icon","YOYO-Tube"),icon:"admin-Customizer",category:"Heading_block",example:{},edit(){return React.createElement("div",null,"Hello World, step 1 (from the editor).")},save(){return React.createElement("div",null,"Hello World, step 1 (from the frontend).")}})}();
