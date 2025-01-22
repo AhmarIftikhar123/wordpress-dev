@@ -1,1 +1,141 @@
-!function(){var e={655:function(){jQuery,new class{constructor(){this.initializeClock()}initializeClock(){setInterval(this.time.bind(this),1e3)}time(){var e=new Date,t=e.getHours(),n=t>=12?"PM":"AM",r=t+":"+e.getMinutes()+":"+e.getSeconds(),i=document.getElementById("time-emoji");i.innerHTML=t>=5&&t<=17?"☀️":"🌕",document.getElementById("time").innerHTML=r,document.getElementById("ampm").innerHTML=n}}}},t={};function n(r){var i=t[r];if(void 0!==i)return i.exports;var o=t[r]={exports:{}};return e[r](o,o.exports,n),o.exports}n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,{a:t}),t},n.d=function(e,t){for(var r in t)n.o(t,r)&&!n.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},function(){"use strict";n(655)}()}();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (function() { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./assets/src/js/clock/index.js":
+/*!**************************************!*\
+  !*** ./assets/src/js/clock/index.js ***!
+  \**************************************/
+/***/ (function() {
+
+eval("// Self-invoking anonymous function\n(function ($) {\n  // Create a class of clock\n  class Clock {\n    constructor() {\n      // Initialize the clock\n      this.initializeClock();\n    }\n    initializeClock() {\n      // Set interval to update the clock every second\n      setInterval(this.time.bind(this), 1000);\n    }\n    time() {\n      // Get the current date and time\n      var date = new Date();\n      var hours = date.getHours();\n      var minutes = date.getMinutes();\n      var seconds = date.getSeconds();\n      var ampm = hours >= 12 ? \"PM\" : \"AM\";\n\n      // Update the time and AM/PM indicator\n      var timeString = hours + \":\" + minutes + \":\" + seconds;\n\n      // Get the emoji element\n      var emojiElement = document.getElementById(\"time-emoji\");\n\n      // Update the emoji based on the time of day\n      if (hours >= 5 && hours <= 17) {\n        emojiElement.innerHTML = \"☀️\";\n      } else {\n        emojiElement.innerHTML = \"🌕\";\n      }\n\n      // Update the time and AM/PM indicator\n      document.getElementById(\"time\").innerHTML = timeString;\n      document.getElementById(\"ampm\").innerHTML = ampm;\n    }\n  }\n\n  // Create a new instance of the Clock class\n  new Clock();\n})(jQuery);\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/js/clock/index.js?");
+
+/***/ }),
+
+/***/ "./assets/src/js/main.js":
+/*!*******************************!*\
+  !*** ./assets/src/js/main.js ***!
+  \*******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clock */ \"./assets/src/js/clock/index.js\");\n/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_clock__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../sass/main.scss */ \"./assets/src/sass/main.scss\");\n/* harmony import */ var _images_clock_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/clock.png */ \"./assets/src/images/clock.png\");\n/* harmony import */ var _images_cover_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../images/cover.jpg */ \"./assets/src/images/cover.jpg\");\n\n// scss files\n\n// Images\n\n\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/js/main.js?");
+
+/***/ }),
+
+/***/ "./assets/src/images/clock.png":
+/*!*************************************!*\
+  !*** ./assets/src/images/clock.png ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../../clock.png\");\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/images/clock.png?");
+
+/***/ }),
+
+/***/ "./assets/src/images/cover.jpg":
+/*!*************************************!*\
+  !*** ./assets/src/images/cover.jpg ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../../cover.jpg\");\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/images/cover.jpg?");
+
+/***/ }),
+
+/***/ "./assets/src/sass/main.scss":
+/*!***********************************!*\
+  !*** ./assets/src/sass/main.scss ***!
+  \***********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/sass/main.scss?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	!function() {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = function(module) {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module; };
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./assets/src/js/main.js");
+/******/ 	
+/******/ })()
+;

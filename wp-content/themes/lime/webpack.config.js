@@ -18,7 +18,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"), // Output directory
     filename: "[name].js", // Output JavaScript file
   },
-  mode: "production", // Set mode to 'production' for optimized builds
+  mode: "development", // Set mode to 'production' for optimized builds
   module: {
     rules: [
       {
@@ -63,12 +63,12 @@ module.exports = {
     }),
   ],
   optimization: {
-    minimize: true, // Enable optimization
+    minimize: false, // Enable optimization
     minimizer: [
       new TerserPlugin({
         terserOptions: {
           compress: {
-            drop_console: true,
+            drop_console: false,
           },
         },
       }), // Minify JavaScript

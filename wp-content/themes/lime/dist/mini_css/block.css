@@ -1,0 +1,14 @@
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./assets/src/sass/block.scss ***!
+  \*********************************************************************************************************************/
+/* stylelint-disable */
+.yoyo-icon-heading {
+  display: flex;
+}
+.yoyo-icon-heading .yoyo-icon-heading__heading {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+/* stylelint-enable */
