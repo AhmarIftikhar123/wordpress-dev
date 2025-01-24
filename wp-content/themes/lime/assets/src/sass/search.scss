@@ -2,7 +2,6 @@
  * Checkbox Accordion.
  */
 .checkbox-accordion {
-
 	$self: &;
 
 	display: block;
@@ -27,7 +26,6 @@
 		transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
 
 		&:hover {
-
 			@media (hover: hover) {
 				color: dodgerblue;
 			}
@@ -46,7 +44,6 @@
 		}
 
 		&:hover &-icon {
-
 			@media (hover: hover) {
 				opacity: 1;
 			}
@@ -76,7 +73,6 @@
 
 	// Child Accordion.
 	&__child {
-
 		display: block;
 
 		> #{&}-content {
@@ -119,14 +115,12 @@
 			}
 
 			&:hover {
-
 				@media (hover: hover) {
 					color: dodgerblue ;
 				}
 			}
 
 			&:hover &-icon {
-
 				@media (hover: hover) {
 					opacity: 1;
 				}
@@ -134,7 +128,6 @@
 		}
 
 		&#{&}--has-content {
-
 			&[active] {
 
 				> #{$self}__child-handle-icon svg {

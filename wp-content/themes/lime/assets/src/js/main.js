@@ -1,6 +1,6 @@
-import "./clock";
+import './clock';
 // scss files
-import "../sass/main.scss";
+import '../sass/main.scss';
 // Images
-import "../images/clock.png";
-import "../images/cover.jpg";
+import '../images/clock.png';
+import '../images/cover.jpg';

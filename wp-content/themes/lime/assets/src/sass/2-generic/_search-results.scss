@@ -5,6 +5,7 @@
 
 	.search-card-content {
 		margin-top: 16px;
+
 		@include mq( medium ) {
 			margin-top: 0;
 		}

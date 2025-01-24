@@ -8,7 +8,7 @@ import Edit from "./edit";
 registerBlockType("yoyo-blocks/heading-with-icon", {
   title: __("Heading with Icon", "YOYO-Tube"),
   icon: "admin-customizer",
-  category: "common", // Use a valid WordPress block category
+  category: "Heading_Block", // Use a valid WordPress block category
   description: __("This is a heading with icon.", "YOYO-Tube"),
   example: {},
 
@@ -21,7 +21,7 @@ registerBlockType("yoyo-blocks/heading-with-icon", {
       type: "string",
       source: "html",
       selector: "h4",
-      default: __("Dos", "YOYO-Tube"),
+      default: __("DOS", "YOYO-Tube"),
     },
   },
 
@@ -33,9 +33,9 @@ registerBlockType("yoyo-blocks/heading-with-icon", {
     console.log("save", content); // Debugging output
 
     return (
-      <div className="yoyo-icon-heading">
+      <div className="yoyo-icon-heading__heading">
         {/* Icon placeholder */}
-        <span>
+        <span className="d-grid">
           <HeadingIcon />
         </span>
         <RichText.Content

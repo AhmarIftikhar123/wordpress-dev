@@ -3,8 +3,7 @@
 
 html {
   box-sizing: border-box;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* stylelint-disable */
@@ -167,9 +166,9 @@ sub {
   bottom: -0.25em;
 }
 
-/*------------------------------------*\
+/* ------------------------------------*\
     #HEADINGS
-\*------------------------------------*/
+\*------------------------------------ */
 /* stylelint-disable */
 h1 {
   @include body-text(h1);
@@ -292,9 +291,9 @@ table {
 }
 /* stylelint-enable */
 
-/*------------------------------------*\
+/* ------------------------------------*\
     Form Fields
-\*------------------------------------*/
+\*------------------------------------ */
 
 input,
 button,
@@ -371,6 +370,7 @@ button,
 select,
 textarea {
   @include body-text(body);
+
   font-weight: 400;
 }
 
@@ -386,17 +386,17 @@ input[type="checkbox"] {
 }
 
 input[type="search"] {
-  -webkit-appearance: textfield;
+  appearance: textfield;
 }
 
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
-/*------------------------------------*\
+/* ------------------------------------*\
     #OTHER
-\*------------------------------------*/
+\*------------------------------------ */
 
 pre {
   display: block;
@@ -420,7 +420,9 @@ code {
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
   font-family: $font__code;
+
   @include body-text(s);
+
   border-radius: 3px;
 }
 
@@ -442,7 +444,7 @@ hr {
     height: 1px;
   }
 
-  &:not(.is-style-wide):not(.is-style-dots) {
+  &:not(.is-style-wide, .is-style-dots) {
     width: 100%;
     height: 4px;
     background: transparent;

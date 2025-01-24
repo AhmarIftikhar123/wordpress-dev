@@ -1,4 +1,5 @@
 @use "../0-settings/settings" as *;
+
 // Center block
 @mixin center-block {
   display: block;
@@ -34,6 +35,7 @@
           // @include mq($from: $device) {
             font-size: map_get($values, "font-size");
             line-height: map_get($values, "line-height");
+
           // }
         } @else {
           font-size: map_get($values, "font-size");

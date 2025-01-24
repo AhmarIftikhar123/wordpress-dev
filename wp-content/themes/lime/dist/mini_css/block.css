@@ -4,11 +4,14 @@
 /* stylelint-disable */
 .yoyo-icon-heading {
   display: flex;
-}
-.yoyo-icon-heading .yoyo-icon-heading__heading {
-  display: flex;
   align-items: center;
   margin-right: 1rem;
+}
+
+/* stylelint-enable */
+/* stylelint-disable */
+.yoyo-dos-and-donts .yoyo-dos-and-donts__list {
+  margin-left: 20px;
 }
 
 /* stylelint-enable */

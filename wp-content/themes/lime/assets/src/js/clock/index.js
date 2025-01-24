@@ -1,5 +1,5 @@
 // Self-invoking anonymous function
-(function ($) {
+(function () {
   // Create a class of clock
   class Clock {
     constructor() {
@@ -41,4 +41,4 @@
 
   // Create a new instance of the Clock class
   new Clock();
-})(jQuery);
+})();
