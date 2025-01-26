@@ -4,3 +4,5 @@ import "../sass/block.scss";
 import "./gutenberg/blocks/heading-with-icon/index";
 
 import "./gutenberg/blocks/dost-and-donts/index";
+
+import "./gutenberg/block-extensions/register-block-styles";

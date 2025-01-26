@@ -9,13 +9,13 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./assets/src/js/clock/index.js":
-/*!**************************************!*\
-  !*** ./assets/src/js/clock/index.js ***!
-  \**************************************/
+/***/ "./assets/src/js/carousel/index.js":
+/*!*****************************************!*\
+  !*** ./assets/src/js/carousel/index.js ***!
+  \*****************************************/
 /***/ (function() {
 
-eval("// Self-invoking anonymous function\n(function () {\n  // Create a class of clock\n  class Clock {\n    constructor() {\n      // Initialize the clock\n      this.initializeClock();\n    }\n    initializeClock() {\n      // Set interval to update the clock every second\n      setInterval(this.time.bind(this), 1000);\n    }\n    time() {\n      // Get the current date and time\n      var date = new Date();\n      var hours = date.getHours();\n      var minutes = date.getMinutes();\n      var seconds = date.getSeconds();\n      var ampm = hours >= 12 ? \"PM\" : \"AM\";\n\n      // Update the time and AM/PM indicator\n      var timeString = hours + \":\" + minutes + \":\" + seconds;\n\n      // Get the emoji element\n      var emojiElement = document.getElementById(\"time-emoji\");\n\n      // Update the emoji based on the time of day\n      if (hours >= 5 && hours <= 17) {\n        emojiElement.innerHTML = \"☀️\";\n      } else {\n        emojiElement.innerHTML = \"🌕\";\n      }\n\n      // Update the time and AM/PM indicator\n      document.getElementById(\"time\").innerHTML = timeString;\n      document.getElementById(\"ampm\").innerHTML = ampm;\n    }\n  }\n\n  // Create a new instance of the Clock class\n  new Clock();\n})();\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/js/clock/index.js?");
+eval("(function ($) {\n  class SlickCarousel {\n    constructor() {\n      $(\".carousel\").slick({\n        autoplay: true,\n        autoplaySpeed: 500\n      });\n    }\n  }\n  new SlickCarousel();\n})(jQuery);\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/js/carousel/index.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("// Self-invoking anonymous function\n(function () {\n  // Create a class o
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clock */ \"./assets/src/js/clock/index.js\");\n/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_clock__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../sass/main.scss */ \"./assets/src/sass/main.scss\");\n/* harmony import */ var _images_clock_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/clock.png */ \"./assets/src/images/clock.png\");\n/* harmony import */ var _images_cover_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../images/cover.jpg */ \"./assets/src/images/cover.jpg\");\n\n// scss files\n\n// Images\n\n\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/main.scss */ \"./assets/src/sass/main.scss\");\n/* harmony import */ var _images_clock_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/clock.png */ \"./assets/src/images/clock.png\");\n/* harmony import */ var _images_cover_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/cover.jpg */ \"./assets/src/images/cover.jpg\");\n/* harmony import */ var _carousel_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carousel/index */ \"./assets/src/js/carousel/index.js\");\n/* harmony import */ var _carousel_index__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_carousel_index__WEBPACK_IMPORTED_MODULE_3__);\n// import './clock';\n\n// scss files\n\n// Images\n\n\n// Carousel\n\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/js/main.js?");
 
 /***/ }),
 

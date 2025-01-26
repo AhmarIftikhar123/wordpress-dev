@@ -33,6 +33,7 @@ get_header();
                               </div>
                     <?php endif; ?>
           </div>
+          <?php get_template_part("template-parts/components/carousel"); ?>
 </main>
 
 <?php get_footer(); ?>

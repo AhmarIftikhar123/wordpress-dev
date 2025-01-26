@@ -58,12 +58,22 @@ class Assets
                     // Register Main JS
                     wp_register_script(
                               'main_js',
-                              TEMPLATE_URI . "/assets/src/js/main.js",
-                              ['jquery'],
-                              filemtime(TEMPLATE_DIR . "/assets/src/js/main.js"),
+                              TEMPLATE_URI . "/dist/main.js",
+                              ['jquery','slick_js'],
+                              filemtime(TEMPLATE_DIR . "/dist/main.js"),
                               true
                     );
                     wp_enqueue_script('main_js');
+
+                    // Register Slick.min.js
+                    wp_register_script(
+                              'slick_js',
+                              TEMPLATE_URI . "/dist/library/slick.min.js",
+                              ['jquery'],
+                              filemtime(TEMPLATE_DIR . "/dist/library/slick.min.js"),
+                              true
+                    );
+                    wp_enqueue_script('slick_js');
           }
 
           public function register_styles()
@@ -101,12 +111,30 @@ class Assets
                     // Register Main CSS
                     wp_register_style(
                               'main_css',
-                              TEMPLATE_URI . "/assets/src/dist/mini_css/main.css",
+                              TEMPLATE_URI . "/dist/mini_css/main.css",
                               [],
-                              filemtime(TEMPLATE_DIR . "/assets/src/dist/mini_css/main.css"),
+                              filemtime(TEMPLATE_DIR . "/dist/mini_css/main.css"),
                               'all'
                     );
                     wp_enqueue_style('main_css');
+                    // Register slick slider.css
+                    wp_register_style(
+                              'slick_css',
+                              TEMPLATE_URI . "/dist/library/slick.css",
+                              [],
+                              filemtime(TEMPLATE_DIR . "/dist/library/slick.css"),
+                              'all'
+                    );
+                    wp_enqueue_style('slick_css');
+                    // Register slick slider-theme.css
+                    wp_register_style(
+                              'slick_theme_css',
+                              TEMPLATE_URI . "/dist/library/slick-theme.css",
+                              ['slick_css'],
+                              filemtime(TEMPLATE_DIR . "/dist/library/slick-theme.css"),
+                              'all'
+                    );
+                    wp_enqueue_style('slick_theme_css');
           }
 
           public function remove_scripts()

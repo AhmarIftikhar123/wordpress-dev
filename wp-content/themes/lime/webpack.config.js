@@ -3,7 +3,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin"); // Optional for CSS minification
 const { CleanWebpackPlugin } = require("clean-webpack-plugin"); // Import the plugin
+const CopyPlugin = require("copy-webpack-plugin"); // Import the plugin
 const DependencyExtractionWebpackPlugin = require("@wordpress/dependency-extraction-webpack-plugin");
+// Define directories
+const LIB_DIR = path.resolve(__dirname, "assets/src/library/css/slick"); // Source library folder
+const BUILD_DIR = path.resolve(__dirname, "dist"); // Output build folder
 
 const JS_DIR = "./assets/src/js/";
 const entry = {
@@ -15,7 +19,7 @@ const entry = {
 module.exports = {
   entry: entry, // Entry point of your application
   output: {
-    path: path.resolve(__dirname, "dist"), // Output directory
+    path: BUILD_DIR, // Output directory
     filename: "[name].js", // Output JavaScript file
   },
   mode: "development", // Set mode to 'production' for optimized builds
@@ -60,6 +64,9 @@ module.exports = {
     new DependencyExtractionWebpackPlugin({
       injectPolyfill: true,
       combineAssets: true,
+    }),
+    new CopyPlugin({
+      patterns: [{ from: LIB_DIR, to: BUILD_DIR + "/library" }],
     }),
   ],
   optimization: {

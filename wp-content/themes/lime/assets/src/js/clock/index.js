@@ -28,14 +28,14 @@
 
       // Update the emoji based on the time of day
       if (hours >= 5 && hours <= 17) {
-        emojiElement.innerHTML = "☀️";
+        emojiElement.textContent = "☀️";
       } else {
-        emojiElement.innerHTML = "🌕";
+        emojiElement.textContent = "🌕";
       }
 
       // Update the time and AM/PM indicator
-      document.getElementById("time").innerHTML = timeString;
-      document.getElementById("ampm").innerHTML = ampm;
+      document.getElementById("time").textContent = timeString;
+      document.getElementById("ampm").textContent = ampm;
     }
   }
 
