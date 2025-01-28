@@ -15,7 +15,7 @@
   \*****************************************/
 /***/ (function() {
 
-eval("(function ($) {\n  class SlickCarousel {\n    constructor() {\n      $(\".carousel\").slick({\n        autoplay: true,\n        autoplaySpeed: 500\n      });\n    }\n  }\n  new SlickCarousel();\n})(jQuery);\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/js/carousel/index.js?");
+eval("(function ($) {\n  class SlickCarousel {\n    constructor() {\n      // Check if the carousel element exists\n      if ($(\".carousel\").length) {\n        $(\".carousel\").slick({\n          autoplay: true,\n          autoplaySpeed: 1000,\n          // Adjusted to 3 seconds\n          slidesToShow: 3,\n          // Default number of slides to show\n          slidesToScroll: 1,\n          // Default number of slides to scroll\n          responsive: [{\n            breakpoint: 1024,\n            settings: {\n              slidesToShow: 3,\n              slidesToScroll: 3,\n              infinite: true,\n              dots: true\n            }\n          }, {\n            breakpoint: 600,\n            settings: {\n              slidesToShow: 2,\n              slidesToScroll: 2\n            }\n          }, {\n            breakpoint: 480,\n            settings: {\n              slidesToShow: 1,\n              slidesToScroll: 1\n            }\n          }]\n        });\n      } else {\n        console.warn(\"No carousel element found.\");\n      }\n    }\n  }\n\n  // Initialize the carousel\n  new SlickCarousel();\n})(jQuery);\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/js/carousel/index.js?");
 
 /***/ }),
 
