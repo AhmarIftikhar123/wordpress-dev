@@ -17,6 +17,7 @@ class Lime
                     Sidebars::getInstance();
                     blocks::getInstance();
                     blockPattrens::getInstance();
+                    LoadMorePosts::getInstance();
           }
 
           private function setup_hooks()

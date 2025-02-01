@@ -20,12 +20,12 @@
             <section class="col-lg-4 col-md-6 col-sm-12">
                 <ul>
                     <li><a href="https://check">
-                              <svg width="50">
+                              <svg>
                                         <use  href='#checkbox'></use>
                               </svg>
                     </a></li>
                     <li><a href="https://cross">
-                              <svg width="50">
+                              <svg>
                                         <use  href='#cross'></use>
                               </svg>
                     </a></li>

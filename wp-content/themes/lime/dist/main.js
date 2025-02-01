@@ -26,7 +26,17 @@ eval("(function ($) {\n  class SlickCarousel {\n    constructor() {\n      // Ch
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/main.scss */ \"./assets/src/sass/main.scss\");\n/* harmony import */ var _images_clock_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/clock.png */ \"./assets/src/images/clock.png\");\n/* harmony import */ var _images_cover_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/cover.jpg */ \"./assets/src/images/cover.jpg\");\n/* harmony import */ var _carousel_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carousel/index */ \"./assets/src/js/carousel/index.js\");\n/* harmony import */ var _carousel_index__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_carousel_index__WEBPACK_IMPORTED_MODULE_3__);\n// import './clock';\n\n// scss files\n\n// Images\n\n\n// Carousel\n\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/main.scss */ \"./assets/src/sass/main.scss\");\n/* harmony import */ var _images_clock_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/clock.png */ \"./assets/src/images/clock.png\");\n/* harmony import */ var _images_cover_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/cover.jpg */ \"./assets/src/images/cover.jpg\");\n/* harmony import */ var _carousel_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carousel/index */ \"./assets/src/js/carousel/index.js\");\n/* harmony import */ var _carousel_index__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_carousel_index__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _posts_loadmore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./posts/loadmore */ \"./assets/src/js/posts/loadmore.js\");\n/* harmony import */ var _posts_loadmore__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_posts_loadmore__WEBPACK_IMPORTED_MODULE_4__);\n// import './clock';\n\n// scss files\n\n// Images\n\n\n// Carousel\n\n// LoadMore posts \n\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/js/main.js?");
+
+/***/ }),
+
+/***/ "./assets/src/js/posts/loadmore.js":
+/*!*****************************************!*\
+  !*** ./assets/src/js/posts/loadmore.js ***!
+  \*****************************************/
+/***/ (function() {
+
+eval("\n\n//# sourceURL=webpack://yoyo-tube/./assets/src/js/posts/loadmore.js?");
 
 /***/ }),
 

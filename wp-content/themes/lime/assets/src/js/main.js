@@ -7,3 +7,5 @@ import '../images/clock.png';
 import '../images/cover.jpg';
 // Carousel
 import "./carousel/index";
+// LoadMore posts 
+import "./posts/loadmore";

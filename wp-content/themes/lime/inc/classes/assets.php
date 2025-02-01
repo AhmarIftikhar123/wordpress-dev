@@ -74,6 +74,11 @@ class Assets
                               true
                     );
                     wp_enqueue_script('slick_js');
+                   
+                    wp_localize_script('main_js','siteConfig',[
+                              'ajaxURL' => admin_url('admin-ajax.php'),
+                              'ajax_nonce' => wp_create_nonce('loadmore_post_nonce')
+                    ]);
           }
 
           public function register_styles()
