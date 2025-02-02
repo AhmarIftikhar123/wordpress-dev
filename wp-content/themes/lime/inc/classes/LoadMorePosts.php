@@ -38,7 +38,7 @@ class LoadMorePosts {
         $args = [
             'post_type'      => 'post',
             'post_status'    => 'publish',
-            'posts_per_page' => 6,
+            'posts_per_page' => 3,
             'paged'          => $page_num
         ];
 
@@ -71,7 +71,7 @@ class LoadMorePosts {
                 $this->ajax_script_post_load_more(true);
                 ?>
             </div>
-            <button id="load-more" data-page="1" class="load-more-btn my-4 d-flex flex-column mx-auto px-4 py-2 border-0 bg-transparent">
+            <button id="load-more" data-page="1" class="btn btn-primary load-more-btn my-4 d-flex flex-row align-items-center gap-2 mx-auto px-4 py-2 border-0 ">
                 <span><?php esc_html_e('Load More', 'text-domain'); ?></span>
                 <?php get_template_part(slug: 'template-parts/svgs/loading'); ?>
             </button>

@@ -15,8 +15,6 @@ $post_permalink = get_the_permalink();
 $post_title = get_the_title();
 
 $template_tags = new Template_tags();
-
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="col-lg-4 col-md-6 col-sm-12 pb-4">

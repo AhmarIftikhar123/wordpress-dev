@@ -9,15 +9,15 @@
 <footer class="site-footer" id="footer">
     <div class="container color-gray">
         <div class="row">
-            <section class="col-lg-4 col-md-6 col-sm-12">
+            <!-- <section class="col-lg-4 col-md-6 col-sm-12">
                 Some Random Text
-            </section>
+            </section> -->
             <section class="col-lg-4 col-md-6 col-sm-12">
                 <?php if (function_exists('is_active_sidebar') && is_active_sidebar('footer')): ?>
                     <aside><?php dynamic_sidebar('footer'); ?></aside>
                 <?php endif; ?>
             </section>
-            <section class="col-lg-4 col-md-6 col-sm-12">
+            <!-- <section class="col-lg-4 col-md-6 col-sm-12">
                 <ul>
                     <li><a href="https://check">
                               <svg>
@@ -30,7 +30,7 @@
                               </svg>
                     </a></li>
                 </ul>
-            </section>
+            </section> -->
         </div>
     </div>
 </footer>
@@ -40,7 +40,7 @@ if (function_exists('wp_footer')) {
     wp_footer();
 }
 
-get_template_part('template-parts/content', 'svgs'); 
+// get_template_part('template-parts/content', 'svgs'); 
 ?>
 
 </body>
