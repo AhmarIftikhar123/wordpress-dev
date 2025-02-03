@@ -10,14 +10,14 @@
       this.ajaxUrl = siteConfig?.ajaxURL ?? "";
       this.ajaxNonce = siteConfig?.ajax_nonce ?? "";
       this.loadMoreBtn = $("#load-more");
-      //       this.loadingTextEl = $("#loading-text");
-      //       this.isRequestProcessing = false;
+      this.loadingTextEl = $("#loading-text");
+      this.isRequestProcessing = false;
 
-      //       this.options = {
-      //         root: null,
-      //         rootMargin: "0px",
-      //         threshold: 1.0, // 1.0 means set isIntersecting to true when element comes in 100% view.
-      //       };
+      this.options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 1.0, // 1.0 means set isIntersecting to true when element comes in 100% view.
+      };
       this.init();
     }
 
@@ -25,20 +25,18 @@
       if (!this.loadMoreBtn.length) {
         return;
       }
-      this.loadMoreBtn.on("click", () => this.handleLoadMorePosts());
-      //       this.totalPagesCount = $("#post-pagination").data("max-pages");
-
+      this.totalPagesCount = $("#post-pagination").data("max-pages");
       /**
        * Add the IntersectionObserver api, and listen to the load more intersection status.
        * so that intersectionObserverCallback gets called if the element intersection status changes.
        *
-//        * @type {IntersectionObserver}
-//        */
-      //       const observer = new IntersectionObserver(
-      //         (entries) => this.intersectionObserverCallback(entries),
-      //         this.options
-      //       );
-      //       observer.observe(this.loadMoreBtn[0]);
+       * @type {IntersectionObserver}
+       */
+      const observer = new IntersectionObserver(
+        (entries) => this.intersectionObserverCallback(entries),
+        this.options
+      );
+      observer.observe(this.loadMoreBtn[0]);
     }
 
     /**
@@ -74,14 +72,11 @@
     handleLoadMorePosts() {
       // Get page no from data attribute of load-more button.
       const page = this.loadMoreBtn.data("page");
-      if (
-        !page
-        // || this.isRequestProcessing
-      ) {
+      if (!page || this.isRequestProcessing) {
         return null;
       }
       const nextPage = parseInt(page) + 1; // Increment page count by one.
-      //       this.isRequestProcessing = true;
+      this.isRequestProcessing = true;
 
       $.ajax({
         url: this.ajaxUrl,
@@ -97,8 +92,8 @@
             this.loadMoreBtn.data("page", nextPage);
             //append the data
             $("#load-more-content").append(response);
-            // this.removeLoadMoreIfOnLastPage(nextPage);
-            //   this.isRequestProcessing = false;
+            this.removeLoadMoreIfOnLastPage(nextPage);
+            this.isRequestProcessing = false;
           } else {
             this.loadMoreBtn.remove();
           }

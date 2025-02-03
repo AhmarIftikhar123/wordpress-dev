@@ -17,6 +17,7 @@ class LoadMorePosts {
     public function setup_hooks() {
         add_action('wp_ajax_nopriv_load_more', [$this, 'ajax_script_post_load_more']);
         add_action('wp_ajax_load_more', [$this, 'ajax_script_post_load_more']);
+        add_shortcode('load_more', [$this, 'post_script_load_more']);
     }
 
     public function ajax_script_post_load_more(bool $initial_req = false) {
@@ -75,6 +76,7 @@ class LoadMorePosts {
                 <span><?php esc_html_e('Load More', 'text-domain'); ?></span>
                 <?php get_template_part(slug: 'template-parts/svgs/loading'); ?>
             </button>
+            <?php get_template_part(slug: 'template-parts/common/pagination.php'); ?>
         </div>
         <?php
     }
