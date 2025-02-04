@@ -14,6 +14,7 @@ const entry = {
   main: JS_DIR + "main.js",
   editor: JS_DIR + "editor.js",
   block: JS_DIR + "block.js",
+  single: JS_DIR + "single.js",
 };
 
 module.exports = {

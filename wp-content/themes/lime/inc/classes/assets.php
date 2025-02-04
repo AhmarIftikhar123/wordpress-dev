@@ -74,7 +74,20 @@ class Assets
                               true
                     );
                     wp_enqueue_script('slick_js');
-                   
+
+                    // Register Slick.min.js
+                    wp_register_script(
+                              'single_js',
+                              TEMPLATE_URI . "/dist/library/single.js",
+                              ['jquery'],
+                              filemtime(TEMPLATE_DIR . "/dist/library/single.js"),
+                              true
+                    );
+                    // Conditionally enqueue single.js
+                       if (is_single() || is_front_page() || is_page()) {
+                                 wp_enqueue_script('single_js');
+                               }
+  
                     wp_localize_script('main_js','siteConfig',[
                               'ajaxURL' => admin_url('admin-ajax.php'),
                               'ajax_nonce' => wp_create_nonce('loadmore_post_nonce')
