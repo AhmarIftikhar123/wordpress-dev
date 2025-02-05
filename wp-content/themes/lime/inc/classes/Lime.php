@@ -18,6 +18,7 @@ class Lime
                     blocks::getInstance();
                     blockPattrens::getInstance();
                     LoadMorePosts::getInstance();
+                    LoadMoreSingle::getInstance();
           }
 
           private function setup_hooks()

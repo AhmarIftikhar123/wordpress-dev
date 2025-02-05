@@ -33,7 +33,8 @@ get_header();
                               </div>
                     <?php endif; ?>
           </div>
-          <?php get_template_part("template-parts/components/carousel"); ?>
+          <?php // get_template_part("template-parts/components/carousel"); ?>
+          <?php get_template_part("single"); ?>
 </main>
 
 <?php get_footer(); ?>

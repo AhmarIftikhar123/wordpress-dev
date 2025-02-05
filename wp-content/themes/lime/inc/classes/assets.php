@@ -78,9 +78,9 @@ class Assets
                     // Register Slick.min.js
                     wp_register_script(
                               'single_js',
-                              TEMPLATE_URI . "/dist/library/single.js",
+                              TEMPLATE_URI . "/dist/single.js",
                               ['jquery'],
-                              filemtime(TEMPLATE_DIR . "/dist/library/single.js"),
+                              filemtime(TEMPLATE_DIR . "/dist/single.js"),
                               true
                     );
                     // Conditionally enqueue single.js

@@ -22,7 +22,13 @@ require_once TEMPLATE_DIR . "/vendor/autoload.php";
 /**
  * get_stylesheet_uri() = http://localhost:8001/wp-content/themes/lime/style.css
  */
-
+// function force_single_template($template) {
+//           if (is_singular()) {
+//               $template = locate_template('single.php');
+//           }
+//           return $template;
+//       }
+//       add_filter('template_include', 'force_single_template');
 $Aquila_Instance = Lime::getInstance();
 
 // ?>
