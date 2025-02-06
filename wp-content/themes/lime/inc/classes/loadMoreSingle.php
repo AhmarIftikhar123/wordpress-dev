@@ -20,6 +20,8 @@ class LoadMoreSingle {
         add_action('wp_ajax_load_more', [$this, 'ajax_script_post_load_more']);
 
         add_shortcode('single_post_listings', [$this, 'single_post_load_more_container']);
+
+        add_filter('posts_where', [$this, 'posts_where'], 10, 2);
     }
 
     public function single_post_load_more_container() {
@@ -59,7 +61,7 @@ class LoadMoreSingle {
             'post_status'    => 'publish',
             'posts_per_page' => 1,
             'paged'          => $page_no,
-            'post__not_in'   => [$single_post_id], // Exclude the current post
+            'starting_post_id'   => $single_post_id, // Exclude the current post
         ];
         return new WP_Query($args);
     }
@@ -105,5 +107,28 @@ class LoadMoreSingle {
         }
 
         wp_die();
+    }
+    /**
+     * Modify the WHERE clause of the query to exclude a specific post by ID.
+     *
+     * @param string   $where The existing WHERE clause.
+     * @param WP_Query $query The current WP_Query instance.
+     * @return string Modified WHERE clause.
+     */
+    public function posts_where($where, $query) {
+        global $wpdb;
+
+        // Get the ID of the post to exclude
+        $start = $query->get('starting_post_id');
+
+        // If no starting post ID is provided, return the original WHERE clause
+        if (empty($start)) {
+            return $where;
+        }
+
+        // Exclude the specified post ID from the query results
+        $where .= " AND $wpdb->posts.ID != $start";
+
+        return $where;
     }
 }
