@@ -17,6 +17,10 @@ define('TEMPLATE_DIR', untrailingslashit(get_template_directory()));
 define('TEMPLATE_URI', untrailingslashit(get_template_directory_uri()));
 // http://localhost:8001/wp-content/themes/lime/dist
 define('BUILD_PATH', TEMPLATE_DIR . "/dist");
+
+define('YOYO_ARCHIVE_POST_PER_PAGE', 9);
+
+define('YOYO_SEARCH_POST_PER_PAGE', 9);
 require_once TEMPLATE_DIR . "/vendor/autoload.php";
 
 /**

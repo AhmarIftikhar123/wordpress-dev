@@ -51,6 +51,7 @@ class RegisterTaxonomies
                               'show_in_quick_edit' => true,
                               'show_admin_column' => true,
                               'show_in_rest' => true,
+                              'rewrite' => array('slug' => 'genre')
                     );
                     register_taxonomy('genre', array('movies'), $args);
           }
@@ -84,8 +85,9 @@ class RegisterTaxonomies
                               'show_in_quick_edit' => true,
                               'show_admin_column' => true,
                               'show_in_rest' => true,
+                              'rewrite' => array('slug' => 'movies')
+
                     );
                     register_taxonomy('movie-years', array('movies'), $args);
-
           }
 }

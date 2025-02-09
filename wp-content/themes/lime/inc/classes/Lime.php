@@ -21,6 +21,7 @@ class Lime
                     LoadMoreSingle::getInstance();
                     RegisterPostTypes::getInstance();
                     RegisterTaxonomies::getInstance();
+                    ArchiveSettings::getInstance();
           }
 
           private function setup_hooks()

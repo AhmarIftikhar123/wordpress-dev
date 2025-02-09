@@ -84,7 +84,7 @@ class Assets
                               true
                     );
                     // Conditionally enqueue single.js
-                       if (is_single() || is_front_page() || is_page()) {
+                       if (is_single() || is_front_page() || is_page() || is_archive()) {
                                  wp_enqueue_script('single_js');
                                }
   
