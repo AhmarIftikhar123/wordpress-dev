@@ -118,5 +118,22 @@ class Template_tags
 
                     return $pagination;
           }
+          public function yoyo_is_uploaded_via_wp_admin($grabatar_url){
 
+                    $parse_url = wp_parse_url($grabatar_url);
+
+                    $quer_args = $parse_url['query'] ?? '';
+                    
+                    return !empty($quer_args);
+          }
+          public function yoyo_has_gravatar( $author_email){
+                    $gravatar_url = get_avatar_url($author_email);
+
+                    if($this->yoyo_is_uploaded_via_wp_admin($gravatar_url)) return true;
+                    $gravatar_url = sprintf('%s&d=404',$gravatar_url);
+
+                    $headers = @get_headers( $gravatar_url );
+
+                    return preg_match( "|200|",$headers[0]);
+          }
 }
