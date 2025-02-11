@@ -20,11 +20,11 @@ $avatar       = get_avatar( $author_email, 240, '', '', [ 'class'   => 'rounded-
 	<div class="author-col-one mb-3 col-lg-3 col-md-3 col-sm-12">
 		<div id="author-avatar" class="author-avatar d-flex align-items-start">
 			<?php
-			if ( ! empty( $has_avatar ) ) {
+			if ( empty( $has_avatar ) ) {
 				echo wp_kses_post( $avatar );
 			} else {
 				printf(
-					'<span id="author-firstname" class="d-none">%1$s</span><span id="author-lastname" class="d-none">%2$s</span><div id="author-profile-img" style="width: 230px; height: 230px;" class="rounded-circle bg-secondary position-relative"><span class="h1 text-white inset-center"></span></div>',
+					'<span id="author-firstname" class="d-none">%1$s</span><span id="author-lastname" class="d-none">%2$s</span><div id="author-profile-img" style="width: 230px; height: 230px;" class="d-flex align-items-center justify-content-center rounded-circle bg-secondary position-relative"><span class="h1 text-white inset-center"></span></div>',
 					esc_html( get_the_author_meta( 'first_name' ) ),
 					esc_html( get_the_author_meta( 'last_name' ) )
 				);
