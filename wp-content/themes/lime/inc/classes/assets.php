@@ -101,9 +101,34 @@ class Assets
       filemtime(TEMPLATE_DIR . "/dist/author.js"),
       true
     );
-    if(is_author()){
+    if (is_author()) {
       wp_enqueue_script('author_js');
     }
+
+    // Register Search.js
+    wp_register_script(
+      'search_js',
+      TEMPLATE_URI . "/dist/search.js",
+      ['jquery', 'main_js'],
+      filemtime(TEMPLATE_DIR . "/dist/search.js"),
+      true
+    );
+    // Check if the current page is the search page
+    if (is_page('search')) {
+      // Get filters data
+      // $filters_data = get_filters_data();
+
+      // Enqueue the JavaScript file
+      wp_enqueue_script('search_js');
+
+      // Localize the script with data
+      wp_localize_script('search_js', 'search_settings', [
+        'rest_api_url' => home_url('/wp-json/af/v1/search'),
+        'root_url' => home_url('search'),
+        // 'filter_ids' => get_filter_ids($filters_data),
+      ]);
+    }
+
   }
 
   public function register_styles()
@@ -165,6 +190,18 @@ class Assets
       'all'
     );
     wp_enqueue_style('slick_theme_css');
+
+        // Register search.css
+        wp_register_style(
+          'search_css',
+          TEMPLATE_URI . "/dist/library/search.css",
+          [],
+          filemtime(TEMPLATE_DIR . "/dist/library/search.css"),
+          'all'
+        );
+        if(is_page('search')){
+          wp_enqueue_style('search_css');
+        }
   }
 
   public function remove_scripts()
