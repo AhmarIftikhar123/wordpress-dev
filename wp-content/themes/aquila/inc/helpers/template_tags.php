@@ -71,4 +71,13 @@ class Template_tags
                     $exert = substr($trim_excert, 0, strpos($trim_excert, ' '));
                     return "$exert  [...]";
           }
+          public function aquila_exert_more($more = "")
+          {
+                    $more = sprintf(
+                              '<a class="more-link" href="%1$s">%2$s</a>',
+                              esc_url(get_permalink()),
+                              esc_html($more)
+                    );
+                    return $more;
+          }
 }

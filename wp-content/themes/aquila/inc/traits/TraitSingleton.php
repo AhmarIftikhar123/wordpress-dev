@@ -22,6 +22,8 @@ trait TraitSingleton
 
           final public static function get_instance()
           {
+                    echo "reached";
+
                     $called_class = get_called_class();
                     if (!isset(self::$instance[$called_class])) {
                               self::$instance[$called_class] = new $called_class();

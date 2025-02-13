@@ -1,4 +1,6 @@
 <?php
+
+use Inc\Helpers\Template_tags;
 /**
  * Page template search.
  *
@@ -7,7 +9,9 @@
 
 get_header();
 
-// $filters_data = get_filters_data();
+$template_tags = new Template_tags();
+
+$filters_data = $template_tags->get_filters_data();
 
 ?>
 <div id="primary">
