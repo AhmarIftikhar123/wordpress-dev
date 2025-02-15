@@ -194,9 +194,9 @@ class Assets
         // Register search.css
         wp_register_style(
           'search_css',
-          TEMPLATE_URI . "/dist/library/search.css",
+          TEMPLATE_URI . "/dist/mini_css/search.css",
           [],
-          filemtime(TEMPLATE_DIR . "/dist/library/search.css"),
+          filemtime(TEMPLATE_DIR . "/dist/mini_css/search.css"),
           'all'
         );
         if(is_page('search')){

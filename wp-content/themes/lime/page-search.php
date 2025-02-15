@@ -2,9 +2,9 @@
 
 use Inc\Helpers\Template_tags;
 /**
- * Page template search.
+ * Template Name: Search Page
  *
- * @package Aquila
+ * @package YOYO-Tube
  */
 
 get_header();

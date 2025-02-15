@@ -249,7 +249,7 @@ class Template_tags
                                         ],
                               ];
 
-                              $posts_with_the_term = new WP_Query($query_args);
+                              $posts_with_the_term = new \WP_Query($query_args);
 
                               if (empty($posts_with_the_term->posts)) {
                                         continue;
@@ -275,7 +275,7 @@ class Template_tags
                                         $term_data['children'] = [];
 
                                         foreach ($term_children as $term_child) {
-                                                  if (!empty($term_child) && $term_child instanceof WP_Term) {
+                                                  if (!empty($term_child) && $term_child instanceof \WP_Term) {
 
                                                             $query_args['tax_query'] = [
                                                                       [
@@ -285,7 +285,7 @@ class Template_tags
                                                                       ],
                                                             ];
 
-                                                            $posts_with_term_child = new WP_Query($query_args);
+                                                            $posts_with_term_child = new \WP_Query($query_args);
 
                                                             if (empty($posts_with_term_child->posts)) {
                                                                       continue;
@@ -311,7 +311,7 @@ class Template_tags
                                                                       $term_child_data['children'] = [];
 
                                                                       foreach ($term_grand_children as $term_grand_child) {
-                                                                                if (!empty($term_grand_child) && $term_grand_child instanceof WP_Term) {
+                                                                                if (!empty($term_grand_child) && $term_grand_child instanceof \WP_Term) {
 
                                                                                           $query_args['tax_query'] = [
                                                                                                     [
@@ -321,7 +321,7 @@ class Template_tags
                                                                                                     ],
                                                                                           ];
 
-                                                                                          $posts_with_term_grand_child = new WP_Query($query_args);
+                                                                                          $posts_with_term_grand_child = new \WP_Query($query_args);
 
                                                                                           if (empty($posts_with_term_grand_child->posts)) {
                                                                                                     continue;
@@ -345,7 +345,7 @@ class Template_tags
 
                                                                                           if (!empty($term_great_grand_children) && !is_wp_error($term_great_grand_children)) {
                                                                                                     foreach ($term_great_grand_children as $term_great_grand_child) {
-                                                                                                              if (!empty($term_great_grand_child) && $term_great_grand_child instanceof WP_Term) {
+                                                                                                              if (!empty($term_great_grand_child) && $term_great_grand_child instanceof \WP_Term) {
 
                                                                                                                         $query_args['tax_query'] = [
                                                                                                                                   [
@@ -355,7 +355,7 @@ class Template_tags
                                                                                                                                   ],
                                                                                                                         ];
 
-                                                                                                                        $posts_with_term_great_grand_child = new WP_Query($query_args);
+                                                                                                                        $posts_with_term_great_grand_child = new \WP_Query($query_args);
 
                                                                                                                         if (empty($posts_with_term_great_grand_child->posts)) {
                                                                                                                                   continue;
