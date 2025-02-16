@@ -44,6 +44,7 @@ $template_tags = new Template_tags();
 
     <!-- Load More Posts Shortcode -->
     <?= do_shortcode('[single_post_listings]'); ?>
+    <?php comments_template(); ?>
 </main>
 
 <?php get_footer(); ?>

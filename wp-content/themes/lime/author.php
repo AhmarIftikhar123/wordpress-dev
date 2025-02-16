@@ -2,7 +2,7 @@
 /**
  * Author Archive Page template file.
  *
- * @package Aquila
+ * @package YOYO-Tube
  */
 
 use Inc\Helpers\Template_tags;
