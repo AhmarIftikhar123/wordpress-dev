@@ -68,5 +68,5 @@ if (post_password_required()) {
           <?php if (!comments_open() && get_comments_number()): ?>
                     <p class="no-comments"><?php _e('Comments are closed.', 'twentythirteen'); ?></p>
           <?php endif; ?>
-
+                    <?php comment_form() ?>
 </div>
